@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.ArrayList;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -27,6 +27,21 @@ public class PostRequirementController {
             return new ResponseEntity<String>("Post Requirement Details Not Added", HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+    @GetMapping("/getPostRequirements")
+    public ResponseEntity<ArrayList<PostRequirement>> getPostRequirements() {
+
+        ArrayList<PostRequirement> postRequirements = null;
+        try {
+            postRequirements = postRequirementService.getPostRequirements();
+
+            return new ResponseEntity<ArrayList<PostRequirement>>(postRequirements, HttpStatus.OK);
+
+
+        } catch (Exception ex) {
+            return null;
+        }
 
     }
 }
