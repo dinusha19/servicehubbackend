@@ -18,9 +18,9 @@ public class PostRequirementController {
 
     @PostMapping("/addPostRequirement")
     public ResponseEntity<String> addPostRequirement(@RequestBody PostRequirement postRequirement) {
-       // PostRequirement postRequirement1;
+        PostRequirement postRequirement1;
         try {
-            //postRequirement1 = postRequirementService.savePostRequirement(postRequirement);
+            postRequirement1 = postRequirementService.savePostRequirement(postRequirement);
             return new ResponseEntity<String>("Post Requirement Details Added Successfully", HttpStatus.OK);
 
         } catch (Exception ex) {

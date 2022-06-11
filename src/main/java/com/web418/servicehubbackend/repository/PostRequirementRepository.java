@@ -1,4 +1,4 @@
-package com.web418.servicehubbackend.Repository;
+package com.web418.servicehubbackend.repository;
 
 import com.web418.servicehubbackend.entity.PostRequirement;
 import org.springframework.data.repository.CrudRepository;
